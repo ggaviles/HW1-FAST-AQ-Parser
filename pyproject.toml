@@ -1,20 +1,14 @@
 [build-system]
-requires = [
-	"flit_core >=3.2,<4",
-	"python_version >= '3.7'"
-	]
+requires = ["flit_core >=3.2,<4"]
 build-backend = "flit_core.buildapi"
 
 [project]
-name = #NAME_OF_PACKAGE
-authors = [{ name = "Giovanni Aviles", email = "giovanni.aviles@ucsf.edu" }]
+name = "seqparser"
+authors = [{name = "Giovanni Aviles", email = "giovanni.aviles@ucsf.edu"}]
 readme = "README.md"
 license = {file = "LICENSE"}
 classifiers = ["License :: OSI Approved :: MIT License"]
 dynamic = ["version", "description"]
-dependencies = [
-	"pytest"
-]
 
 [project.urls]
-Home = "https://github.com/ggaviles/HW1-FAST-AQ-Parser"
+Home = "https://github.com/ggaviles/HW1-FAST-AQ-Parser/tree/main/seqparser"

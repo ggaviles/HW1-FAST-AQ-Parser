@@ -1,9 +1,8 @@
 # write tests for transcribes
+import pytest
+from seqparser import transcribe, reverse_transcribe
 
-from seqparser import (
-        transcribe,
-        reverse_transcribe)
-
+SEQ = "ACTGAACCC"
 
 def test_freebie_transcribe_1():
     """
