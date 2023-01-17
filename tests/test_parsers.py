@@ -53,10 +53,10 @@ def test_FastaParser():
     reads in the example Fasta File.
     """
     fasta_parser_obj = FastaParser(get_filepath("fasta"))
-    for record in fasta_parser_obj:
-        return record
 
-    assert record == open_fasta_reference()
+    lines = [line[1] for line in fasta_parser_obj]
+
+    assert lines == open_fasta_reference()
 
 
 def test_FastqParser():
@@ -68,7 +68,8 @@ def test_FastqParser():
     """
 
     fastq_parser_obj = FastqParser(get_filepath("fastq"))
-    for record in fastq_parser_obj:
-        return record
 
-    assert record == open_fastq_reference()
+    lines = [line[1] for line in fastq_parser_obj]
+
+    assert lines == open_fastq_reference()
+
