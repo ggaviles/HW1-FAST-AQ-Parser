@@ -20,7 +20,12 @@ jobs:
 
       - name: Install package
         run: |
-          pip install . 
+          pip install .
+
+      - name: Install numpy
+        run: |
+          pip install numpy 
+
       - name: Test with pytest
         run: |
           python -m pytest -vv tests/*py

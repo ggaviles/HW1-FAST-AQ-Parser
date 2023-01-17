@@ -1,5 +1,6 @@
 # write tests for transcribes
 import pytest
+import numpy as np
 from seqparser import transcribe, reverse_transcribe
 from data.make_seq import make_seq
 

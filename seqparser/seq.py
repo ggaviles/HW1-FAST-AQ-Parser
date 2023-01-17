@@ -1,6 +1,8 @@
 # DNA -> RNA Transcription
 from typing import Union
 
+import numpy as np
+
 TRANSCRIPTION_MAPPING = {"A": "U", "C": "G", "T": "A", "G": "C"}
 ALLOWED_NUC = TRANSCRIPTION_MAPPING.keys()
 
