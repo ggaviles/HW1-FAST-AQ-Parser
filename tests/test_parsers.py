@@ -69,7 +69,7 @@ def test_FastqParser():
 
     fastq_parser_obj = FastqParser(get_filepath("fastq"))
 
-    lines = [line[1] for line in fastq_parser_obj]
+    lines = [list(line[1:3]) for line in fastq_parser_obj]
 
     assert lines == open_fastq_reference()
 
