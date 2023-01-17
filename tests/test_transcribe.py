@@ -1,6 +1,9 @@
 # write tests for transcribes
 import pytest
 from seqparser import transcribe, reverse_transcribe
+from data.make_seq import make_seq
+
+TRANSCRIPTION_MAPPING = {"A": "U", "C": "G", "T": "A", "G": "C"}
 
 SEQ = "ACTGAACCC"
 
@@ -10,7 +13,6 @@ def test_freebie_transcribe_1():
     DO NOT MODIFY THIS FUNCTION
     """
     assert True
-
 
 def test_freebie_transcribe_2():
     """
@@ -25,12 +27,26 @@ def test_transcribe():
     Write your unit test for the
     transcribe function here.
     """
-    pass
-
+    assert transcribe(SEQ) == "UGACUUGGG"
 
 def test_reverse_transcribe():
     """
     Write your unit test for the
     reverse transcribe function here.
     """
-    pass
+    assert reverse_transcribe(SEQ) == "GGGUUCAGU"
+
+def test_transcribe_random_seq():
+    seq = make_seq(7).upper()
+    output = "".join(map(TRANSCRIPTION_MAPPING.get, seq))
+    transcribed_seq = transcribe(seq)
+    assert output == transcribed_seq
+
+def test_reverse_transcribe_random_seq():
+    seq = make_seq(10).upper()
+    output = "".join(map(TRANSCRIPTION_MAPPING.get, seq))
+    output = output[::-1]
+    rev_trans_seq = reverse_transcribe(seq)
+    assert output == rev_trans_seq
+
+

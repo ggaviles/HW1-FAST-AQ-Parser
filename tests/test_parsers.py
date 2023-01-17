@@ -1,6 +1,7 @@
 # write tests for parsers
+from seqparser import parse, seq
 
-from seqparser import (
+from seqparser.parse import (
     FastaParser,
     FastqParser)
 
@@ -43,19 +44,19 @@ def open_fasta_reference():
         seqs = list(map(lambda l: l.strip(), f.readlines()))
     return seqs  # will be a list of seqs, quality that were parsed from the test files using get-seq.sh
 
-
         
-def test_FastaParser(FastaParser):
+def test_FastaParser():
     """
     Write your unit test for your FastaParser
     class here. You should generate an instance of
     your FastaParser class and assert that it properly
     reads in the example Fasta File.
     """
+    fasta_parser_obj = FastaParser(get_filepath("fasta"))
+    for record in fasta_parser_obj:
+        return record
 
-    assert FastaParser(get_filepath("fasta")) == open_fasta_reference()
-
-    pass
+    assert record == open_fasta_reference()
 
 
 def test_FastqParser():
@@ -66,6 +67,8 @@ def test_FastqParser():
     reads in the example Fastq File.
     """
 
-    assert FastqParser(get_filepath("fastq")) == open_fastq_reference()
+    fastq_parser_obj = FastqParser(get_filepath("fastq"))
+    for record in fastq_parser_obj:
+        return record
 
-    pass
+    assert record == open_fastq_reference()

@@ -22,13 +22,11 @@ A Python module for FAST[AQ] IO and DNA->RNA Transcribing
     We hope to encourage you to modularize your code and reuse things often! 
 """
 
-import seq, parse
-
-from parse import (
+from seqparser.parse import (
         FastaParser,
         FastqParser)
 
-from seq import (
+from seqparser.seq import (
         transcribe,
         reverse_transcribe)
 
